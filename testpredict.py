@@ -1,6 +1,6 @@
 import os
 import time
-import dependencyAnalysis
+import dependencyAnalysis as Analyzer
 import tree_sitter
 from tree_sitter import Language, Parser
 
@@ -59,16 +59,27 @@ def extract_class_names(tree):
     traverse(tree.root_node)
     return class_names
 
-testsToRerun = set()
+changedClasses = set()
+testClassesToRerun = set()
 
 def compare_trees(tree1, tree2):
-    global testsToRerun
+    global changedClasses
+    global testClassesToRerun
     # Implement the comparison logic here
     class_names1 = extract_class_names(tree1)
     if len(class_names1) > 0:
-        testsToRerun = testsToRerun.union(set(class_names1))
+        changedClasses = changedClasses.union(set(class_names1))
 
-    print("tests to rerun: ", testsToRerun)
+    print("Changed classes: ", changedClasses)
+
+    for testClass in Analyzer.decode_byte_strings(Analyzer.dependencies_json):
+        isTestDependent = any(item in changedClasses for item in testClass['fields'])
+
+        if isTestDependent:
+            testClassesToRerun = testClassesToRerun.union(set([testClass['className']]))
+
+    print ("Test classes to re-run: ", testClassesToRerun)
+
 
 # Initialize a parser for the language (replace 'my-language' with your language, e.g., 'c')
 parser = get_parser('java')

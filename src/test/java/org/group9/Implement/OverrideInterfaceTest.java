@@ -15,12 +15,12 @@ class OverrideInterfaceTest {
 
     @Test
     void DefaultNoOverride() {
-        assertEquals("Default" ,override.DefaultNoOverride());
+        assertEquals("Deflt", override.DefaultNoOverride());
     }
 
     @Test
     void defaultOverride() {
-        assertEquals("Overridden" ,override.DefaultOverride());
+        assertEquals("Overridden", override.DefaultOverride());
     }
 
     @Test
@@ -30,7 +30,7 @@ class OverrideInterfaceTest {
 
     @Test
     void multipleCallsInOneTest() {
-        assertEquals("Overridden" ,override.DefaultOverride());
+        assertEquals("Overridden", override.DefaultOverride());
         assertEquals("Override and extended", override.DefaultOverrideAndExtend());
     }
 }

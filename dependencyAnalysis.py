@@ -50,6 +50,7 @@ def traverse(node, final_json):
         aggregation = []
         imports = []
         package = ""
+        class_fields = []
         for child in node.children:
             class_name = extract_class_names(child)
             implements = extract_inheritance(child)
@@ -57,6 +58,7 @@ def traverse(node, final_json):
             class_content = extract_class_content(child)
             class_imports = extract_class_imports(child)
             class_package = extract_class_package(child)
+            fields = extract_fields(child)
             if class_name:
                 name = class_name
             if implements:
@@ -74,8 +76,11 @@ def traverse(node, final_json):
                 imports.append(class_imports)
             if class_package:
                 package = class_package
+            if fields:
+                class_fields = fields
         final_json.append({
             'className': name,
+            'fields': class_fields,
             'innerClasses': inner_classes,
             'realizations': realizations,
             'inheritance': inheritance,
@@ -87,11 +92,14 @@ def traverse(node, final_json):
 
 def extract_class_names(node):
     if node.type == "class_declaration":
-        return node.children[2].text  # Assuming the class name is the third child
+        if (node.children[2].type == "identifier"):
+            return node.children[2].text
+        else: 
+            return node.children[1].text  # Assuming the class name is the third child
     return None
 
 def extract_inheritance(node):
-    if node.type == "class_declaration" and ("implements" in str(node.children[3].text) or ("extends" in str(node.children[3].text))):
+    if node.type == "class_declaration" and len(node.children) > 3 and ("implements" in str(node.children[3].text) or ("extends" in str(node.children[3].text))):
         return node.children[3].text  # Assuming the inheritance is the fourth child
     return None
 
@@ -110,13 +118,25 @@ def extract_class_package(node):
         return node.text
     return None
 
-files = get_all_files_from_folder('./src/test/java')
-final_json = []
+def extract_fields(node):
+    fields = []
+    if node.type == "class_declaration":
+        for child in node.children:
+            if child.type == "class_body":
+                for child2 in child.children: 
+                    if child2.type == "field_declaration":
+                        for child3 in child2.children:
+                            if child3.type == "type_identifier":
+                                fields.append(child3.text)
+    return fields
+
+files = get_all_files_from_folder('./src/test/java/')
+dependencies_json = []
 
 for file_path in files:
     content = read_file(file_path)
     tree = parse_code(parser, content)
-    traverse(tree.root_node, final_json)
+    traverse(tree.root_node, dependencies_json)
 
 def decode_byte_strings(obj):
     if isinstance(obj, bytes):
@@ -129,4 +149,5 @@ def decode_byte_strings(obj):
         return obj
 
 with open('./test.json', 'w') as json_file:
-    json.dump(decode_byte_strings(final_json), json_file)
+    json.dump(decode_byte_strings(dependencies_json), json_file)
+
