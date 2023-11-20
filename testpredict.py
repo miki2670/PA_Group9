@@ -48,7 +48,6 @@ def extract_class_names(tree):
     def traverse(node):
         if node.type == 'class_declaration' or node.type == 'interface_declaration':
             for child in node.children:
-                print (child.type)
                 if child.type == 'identifier':
                     class_names.append(child.text.decode('utf-8'))
                     break

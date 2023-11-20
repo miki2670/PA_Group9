@@ -6,7 +6,7 @@ public interface ITest {
     }
 
     default String DefaultOverride() {
-        return "DefaultToOverride";
+        return "DefaultToerride";
     }
 
     default String DefaultOverrideAndExtend() {
