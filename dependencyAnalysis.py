@@ -1,8 +1,8 @@
 import os
 import json
+import re
 import tree_sitter
 from tree_sitter import Language, Parser
-
 
 Language.build_library(
   # Store the library in the `build` directory
@@ -27,15 +27,18 @@ def parse_code(parser, code):
     return parser.parse(code)
 
 def read_file(file_path):
-    with open(file_path, 'r') as file:
+    with open(file_path, 'rb') as file:
         return file.read()
 
 def get_all_files_from_folder(directory):
-    files = []
-    for root, dirs, filenames in os.walk(directory):
-        for filename in filenames:
-            files.append(os.path.join(root, filename))
-    return files
+    results = []
+
+    for root, _, files in os.walk(directory):
+        for file in files:
+            file_path = os.path.join(root, file)
+            results.append(file_path)
+
+    return results
 
 def traverse(node, final_json):
     if node.type == "program":
@@ -57,15 +60,16 @@ def traverse(node, final_json):
             if class_name:
                 name = class_name
             if implements:
-                realizations = implements.lower() if "implements" in implements.lower() else ""
+                realizations = implements.lower() if "implements" in str(implements.lower()) else ""
             if extends:
-                inheritance = extends.lower() if "extends" in extends.lower() else ""
+                inheritance = extends.lower() if "extends" in str(extends.lower()) else ""
             if class_content:
                 content = class_content
-                classes = re.findall(r'(?:[A-Z][a-zA-Z1-9]*) (?:[a-z][a-zA-Z1-9]*) =', content)
+                classes = re.findall(r'(?:[A-Z][a-zA-Z1-9]*) (?:[a-z][a-zA-Z1-9]*) =', str(content))
                 aggregation = [c.split()[0] for c in classes] if classes else []
-                inner_class = [m.children[2].text for m in child.body_node.children if m.type == 'class_declaration']
-                inner_classes = inner_class
+                if (hasattr(child, "body_node")):
+                    inner_class = [m.children[2].text for m in child.body_node.children if m.type == 'class_declaration']
+                    inner_classes = inner_class
             if class_imports:
                 imports.append(class_imports)
             if class_package:
@@ -87,7 +91,7 @@ def extract_class_names(node):
     return None
 
 def extract_inheritance(node):
-    if node.type == "class_declaration":
+    if node.type == "class_declaration" and ("implements" in str(node.children[3].text) or ("extends" in str(node.children[3].text))):
         return node.children[3].text  # Assuming the inheritance is the fourth child
     return None
 
@@ -106,7 +110,7 @@ def extract_class_package(node):
         return node.text
     return None
 
-files = get_all_files_from_folder('./src/main/java/org/group9/')
+files = get_all_files_from_folder('./src/test/java')
 final_json = []
 
 for file_path in files:
@@ -114,5 +118,15 @@ for file_path in files:
     tree = parse_code(parser, content)
     traverse(tree.root_node, final_json)
 
+def decode_byte_strings(obj):
+    if isinstance(obj, bytes):
+        return obj.decode('utf-8')  # Assuming utf-8 encoding
+    elif isinstance(obj, list):
+        return [decode_byte_strings(item) for item in obj]
+    elif isinstance(obj, dict):
+        return {key: decode_byte_strings(value) for key, value in obj.items()}
+    else:
+        return obj
+
 with open('./test.json', 'w') as json_file:
-    json.dump(final_json, json_file)
+    json.dump(decode_byte_strings(final_json), json_file)

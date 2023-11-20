@@ -1,6 +1,6 @@
 import os
 import time
-#import dependencyAnalysis
+import dependencyAnalysis
 import tree_sitter
 from tree_sitter import Language, Parser
 
