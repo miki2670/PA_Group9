@@ -1,7 +1,9 @@
 import os
 import time
+import dependencyAnalysis
 import tree_sitter
 from tree_sitter import Language, Parser
+
 
 Language.build_library(
   # Store the library in the `build` directory
