@@ -5,17 +5,13 @@ import tree_sitter
 from tree_sitter import Language, Parser
 
 Language.build_library(
-  # Store the library in the `build` directory
   'build/my-languages.so',
-
-  # Include one or more languages
   [
     './tree-sitter-java'
   ]
 )
 
 def get_parser(language_name):
-    # Configure this function based on your specific setup
     LANGUAGE = tree_sitter.Language('build/my-languages.so', language_name)
     parser = tree_sitter.Parser()
     parser.set_language(LANGUAGE)
@@ -95,12 +91,12 @@ def extract_class_names(node):
         if (node.children[2].type == "identifier"):
             return node.children[2].text
         else: 
-            return node.children[1].text  # Assuming the class name is the third child
+            return node.children[1].text
     return None
 
 def extract_inheritance(node):
     if node.type == "class_declaration" and len(node.children) > 3 and ("implements" in str(node.children[3].text) or ("extends" in str(node.children[3].text))):
-        return node.children[3].text  # Assuming the inheritance is the fourth child
+        return node.children[3].text
     return None
 
 def extract_class_content(node):
@@ -140,7 +136,7 @@ for file_path in files:
 
 def decode_byte_strings(obj):
     if isinstance(obj, bytes):
-        return obj.decode('utf-8')  # Assuming utf-8 encoding
+        return obj.decode('utf-8')
     elif isinstance(obj, list):
         return [decode_byte_strings(item) for item in obj]
     elif isinstance(obj, dict):
