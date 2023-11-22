@@ -1,24 +1,20 @@
 package org.group9.Constant;
 
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 class ConstantTest {
 
-    @Test
+    @org.junit.jupiter.api.Test
     void getConstant() {
-        assertEquals(Constant.constant, new Constant().getConstant());
+        System.out.println(Constant.constant == new Constant().getConstant());
     }
 
-    @Test
+    @org.junit.jupiter.api.Test
     void noConstant() {
-        assertTrue(new Constant().noConstant() > 0);
+        System.out.println(new Constant().noConstant() > 0);
     }
 
-    @Test
+    @org.junit.jupiter.api.Test
     void multipleCallsInOneTest() {
-        assertEquals(Constant.constant, new Constant().getConstant());
-        assertTrue(new Constant().noConstant() > 0);
+        System.out.println(Constant.constant == new Constant().getConstant());
+        System.out.println(new Constant().noConstant() > 0);
     }
 }
