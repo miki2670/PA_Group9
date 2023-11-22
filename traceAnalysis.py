@@ -4,12 +4,10 @@ import json
 import os
 import argparse
 
-def analyse(test_byte_code, all_byte_codes, name): 
-    interpret = Interpreter(test_byte_code, True, all_byte_codes)
-    (l, s, pc) = [], [], 0
-    interpret.memory = []
-    ret = interpret.run((l, s, pc))
-    with open(f'.\\trace-output\\{name}.txt', 'w') as f:
+def analyse(java_class): 
+    stdout = OutputBuffer()
+    ret = run_method(java_class, "test1", [], None, stdout)
+    with open(f'.\\trace-output\\test1.txt', 'w') as f:
         f.write(ret)
 
 
@@ -28,13 +26,12 @@ def main():
         print("compile done")
         return
     
-    if args.test:
-    #if True:
+    #if args.test:
+    if True:
         class_files = glob.glob(".\\output\\*.json", recursive=False)
         directory = os.getcwd()
 
-        all_byte_codes = {}
-        test_byte_codes = {}
+        byte_codes = {}
 
         for class_file in class_files:
             if not class_file == ".\\output\\NoDependencyTest.json":
@@ -42,12 +39,10 @@ def main():
             path = pathlib.Path(class_file).name
             with open(f"{directory}\\output\\{path}", 'r') as file:
                 json_obj = json.load(file)
-                out1, out2= get_functions(os.path.basename(path).split(".")[0], json_obj)
-                test_byte_codes.update(out1)
-                all_byte_codes.update(out2)
+                byte_codes[path] = JavaClass(json_dict=json_obj)
         
-        for key, test_byte_code in test_byte_codes.items():
-            analyse(test_byte_code, all_byte_codes, key)
+        for key, byte_code in byte_codes.items():
+            analyse(byte_code)
 
         print("analysis done")
         return
