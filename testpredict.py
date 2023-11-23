@@ -101,6 +101,7 @@ def compare_trees(original_tree, changed_tree, original_code, changed_code):
     global changedClasses
     global testClassesToRerun
 
+    time1 = time.time()
     changed_package = extract_package_name(changed_tree)
     changed_class = extract_class_name(changed_tree)
 
@@ -125,7 +126,10 @@ def compare_trees(original_tree, changed_tree, original_code, changed_code):
             testClassesToRerun.add(testClass['className'])
 
     print("Test classes to re-run:", testClassesToRerun)
+    time2 = time.time()
+    print("Time on dependency analysis: ", (time2-time1))
 
+    time3 = time.time()
     for changed_method in modified:
         print("---", "("+changed_package+"/"+changed_class+","+changed_method+")", "--- INTERPRETING ORIGINAL")
         trace_of_original_method = Interpreter.bytecode_interp((changed_package+"/"+changed_class, changed_method), print, False)
@@ -138,6 +142,8 @@ def compare_trees(original_tree, changed_tree, original_code, changed_code):
 
         if (trace_of_original_method != trace_of_changed_method):
             print ("Change detection analysis is sound")
+    time4 = time.time()
+    print("Time on dynamic analysis: ", (time4-time3))
     
 parser = get_parser('java')
 
