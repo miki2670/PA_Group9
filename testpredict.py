@@ -132,9 +132,12 @@ def compare_trees(original_tree, changed_tree, original_code, changed_code):
         JvmToJson.jvmToJsonChanged()
         print("---", "("+changed_package+"/"+changed_class+","+changed_method+")", "--- INTERPRETING CHANGES")
         trace_of_changed_method = Interpreter.bytecode_interp((changed_package+"/"+changed_class, changed_method), print, True)
-        print(trace_of_original_method)
-        print(trace_of_changed_method)
+        print("ORIGINAL METHOD TRACE: ", trace_of_original_method)
+        print("CHANGED METHOD TRACE: ", trace_of_changed_method)
         print("--- done ---")
+
+        if (trace_of_original_method != trace_of_changed_method):
+            print ("Change detection analysis is sound")
     
 parser = get_parser('java')
 

@@ -69,6 +69,9 @@ def bytecode_interp(am, log, checkForChanged):
             elif b["type"] == "int":
                 log(" (return)")
                 return os[-1]
+            elif b["type"] == "ref":
+                log(" (return)")
+                return os[-1]
             else: 
                 log("unsupported operation", b)
                 return None
