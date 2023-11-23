@@ -131,6 +131,7 @@ def compare_trees(original_tree, changed_tree, original_code, changed_code):
 
     time3 = time.time()
     for changed_method in modified:
+        JvmToJson.jvmToJsonOriginal()
         print("---", "("+changed_package+"/"+changed_class+","+changed_method+")", "--- INTERPRETING ORIGINAL")
         trace_of_original_method = Interpreter.bytecode_interp((changed_package+"/"+changed_class, changed_method), print, False)
         JvmToJson.jvmToJsonChanged()

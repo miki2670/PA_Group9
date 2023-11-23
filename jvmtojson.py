@@ -42,7 +42,3 @@ def jvmToJsonChanged():
 
         with open(decompiled, 'w') as df:
             subprocess.run(["jello", "-"], input=parsed_json, text=True, stdout=df)
-
-
-
-jvmToJsonOriginal()
