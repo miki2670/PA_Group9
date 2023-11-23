@@ -149,7 +149,7 @@
             "opr": "push",
             "value": {
               "type": "string",
-              "value": "fooooo"
+              "value": "foooo"
             }
           },
           {

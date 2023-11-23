@@ -174,12 +174,12 @@
             "type": "same"
           },
           {
-            "index": 45,
+            "index": 39,
             "type": "chop_frame",
             "info": 2
           },
           {
-            "index": 52,
+            "index": 46,
             "type": "chop_frame",
             "info": 1
           }
@@ -215,19 +215,15 @@
           },
           {
             "offset": 38,
-            "line": 16
-          },
-          {
-            "offset": 44,
             "line": 11
           },
           {
-            "offset": 51,
+            "offset": 45,
             "line": 10
           },
           {
-            "offset": 56,
-            "line": 20
+            "offset": 50,
+            "line": 19
           }
         ],
         "annotations": [],
@@ -294,7 +290,7 @@
           {
             "offset": 14,
             "opr": "goto",
-            "target": 52
+            "target": 46
           },
           {
             "offset": 17,
@@ -313,7 +309,7 @@
           {
             "offset": 20,
             "opr": "goto",
-            "target": 45
+            "target": 39
           },
           {
             "offset": 23,
@@ -458,113 +454,79 @@
           },
           {
             "offset": 62,
-            "opr": "load",
-            "type": "ref",
-            "index": 3
-          },
-          {
-            "offset": 63,
-            "opr": "load",
-            "type": "int",
-            "index": 4
-          },
-          {
-            "offset": 65,
-            "opr": "array_load",
-            "type": "ref"
-          },
-          {
-            "offset": 66,
-            "opr": "load",
-            "type": "int",
-            "index": 5
-          },
-          {
-            "offset": 68,
-            "opr": "load",
-            "type": "double",
-            "index": 6
-          },
-          {
-            "offset": 70,
-            "opr": "array_store",
-            "type": "double"
-          },
-          {
-            "offset": 71,
             "opr": "incr",
             "index": 5,
             "amount": 1
           },
           {
-            "offset": 74,
+            "offset": 65,
             "opr": "load",
             "type": "int",
             "index": 5
           },
           {
-            "offset": 76,
+            "offset": 67,
             "opr": "load",
             "type": "ref",
             "index": 3
           },
           {
-            "offset": 77,
+            "offset": 68,
             "opr": "load",
             "type": "int",
             "index": 4
           },
           {
-            "offset": 79,
+            "offset": 70,
             "opr": "array_load",
             "type": "ref"
           },
           {
-            "offset": 80,
+            "offset": 71,
             "opr": "arraylength"
           },
           {
-            "offset": 81,
+            "offset": 72,
             "opr": "if",
             "condition": "lt",
             "target": 14
           },
           {
-            "offset": 84,
+            "offset": 75,
             "opr": "incr",
             "index": 4,
             "amount": 1
           },
           {
-            "offset": 87,
+            "offset": 78,
             "opr": "load",
             "type": "int",
             "index": 4
           },
           {
-            "offset": 89,
+            "offset": 80,
             "opr": "load",
             "type": "ref",
             "index": 3
           },
           {
-            "offset": 90,
+            "offset": 81,
             "opr": "arraylength"
           },
           {
-            "offset": 91,
+            "offset": 82,
             "opr": "if",
             "condition": "lt",
             "target": 11
           },
           {
-            "offset": 94,
+            "offset": 85,
             "opr": "load",
             "type": "ref",
             "index": 3
           },
           {
-            "offset": 95,
+            "offset": 86,
             "opr": "return",
             "type": "ref"
           }
@@ -620,23 +582,23 @@
         "lines": [
           {
             "offset": 0,
-            "line": 24
+            "line": 23
           },
           {
             "offset": 8,
-            "line": 26
+            "line": 25
           },
           {
             "offset": 11,
-            "line": 27
+            "line": 26
           },
           {
             "offset": 16,
-            "line": 28
+            "line": 27
           },
           {
             "offset": 25,
-            "line": 32
+            "line": 31
           }
         ],
         "annotations": [],
@@ -1033,103 +995,103 @@
         "lines": [
           {
             "offset": 0,
-            "line": 37
+            "line": 36
           },
           {
             "offset": 3,
-            "line": 39
+            "line": 38
           },
           {
             "offset": 6,
-            "line": 41
+            "line": 40
           },
           {
             "offset": 12,
-            "line": 42
+            "line": 41
           },
           {
             "offset": 13,
-            "line": 43
+            "line": 42
           },
           {
             "offset": 16,
-            "line": 45
+            "line": 44
           },
           {
             "offset": 40,
-            "line": 46
+            "line": 45
           },
           {
             "offset": 41,
-            "line": 48
+            "line": 47
           },
           {
             "offset": 43,
-            "line": 49
+            "line": 48
           },
           {
             "offset": 46,
-            "line": 50
-          },
-          {
-            "offset": 51,
-            "line": 51
-          },
-          {
-            "offset": 54,
-            "line": 52
-          },
-          {
-            "offset": 61,
-            "line": 51
-          },
-          {
-            "offset": 67,
-            "line": 55
-          },
-          {
-            "offset": 70,
-            "line": 56
-          },
-          {
-            "offset": 72,
-            "line": 57
-          },
-          {
-            "offset": 75,
-            "line": 58
-          },
-          {
-            "offset": 78,
-            "line": 59
-          },
-          {
-            "offset": 79,
-            "line": 60
-          },
-          {
-            "offset": 91,
-            "line": 61
-          },
-          {
-            "offset": 92,
-            "line": 57
-          },
-          {
-            "offset": 96,
-            "line": 55
-          },
-          {
-            "offset": 100,
-            "line": 64
-          },
-          {
-            "offset": 121,
             "line": 49
           },
           {
+            "offset": 51,
+            "line": 50
+          },
+          {
+            "offset": 54,
+            "line": 51
+          },
+          {
+            "offset": 61,
+            "line": 50
+          },
+          {
+            "offset": 67,
+            "line": 54
+          },
+          {
+            "offset": 70,
+            "line": 55
+          },
+          {
+            "offset": 72,
+            "line": 56
+          },
+          {
+            "offset": 75,
+            "line": 57
+          },
+          {
+            "offset": 78,
+            "line": 58
+          },
+          {
+            "offset": 79,
+            "line": 59
+          },
+          {
+            "offset": 91,
+            "line": 60
+          },
+          {
+            "offset": 92,
+            "line": 56
+          },
+          {
+            "offset": 96,
+            "line": 54
+          },
+          {
+            "offset": 100,
+            "line": 63
+          },
+          {
+            "offset": 121,
+            "line": 48
+          },
+          {
             "offset": 125,
-            "line": 67
+            "line": 66
           }
         ],
         "annotations": [],
@@ -2036,11 +1998,11 @@
         "lines": [
           {
             "offset": 0,
-            "line": 29
+            "line": 28
           },
           {
             "offset": 9,
-            "line": 31
+            "line": 30
           }
         ],
         "annotations": [],
@@ -2244,11 +2206,11 @@
         "lines": [
           {
             "offset": 0,
-            "line": 30
+            "line": 29
           },
           {
             "offset": 14,
-            "line": 31
+            "line": 30
           }
         ],
         "annotations": [],

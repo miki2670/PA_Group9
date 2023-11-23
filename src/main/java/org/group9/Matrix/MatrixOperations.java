@@ -13,7 +13,6 @@ public class MatrixOperations {
                 for (int i = 0; i < secondMatrix.length; i++) {
                     cell += firstMatrix[row][i] * secondMatrix[i][col];
                 }
-                result[row][col] = cell;
             }
         }
 

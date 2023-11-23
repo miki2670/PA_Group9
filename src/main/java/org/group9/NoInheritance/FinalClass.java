@@ -6,7 +6,7 @@ public class FinalClass {
     }
 
     public String foo() {
-        return "fooooo";
+        return "foooo";
     }
 
     public String foobaz() {
