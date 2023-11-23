@@ -1,0 +1,466 @@
+{
+  "name": "org/group9/Extend/Rectangle",
+  "access": [
+    "public",
+    "super"
+  ],
+  "typeparams": [],
+  "super": {
+    "name": "org/group9/Extend/Shape",
+    "inner": null,
+    "args": [],
+    "annotations": []
+  },
+  "interfaces": [],
+  "fields": [
+    {
+      "name": "x",
+      "access": [
+        "protected",
+        "final"
+      ],
+      "type": {
+        "base": "double",
+        "annotations": []
+      },
+      "value": null,
+      "annotations": []
+    },
+    {
+      "name": "y",
+      "access": [
+        "protected",
+        "final"
+      ],
+      "type": {
+        "base": "double",
+        "annotations": []
+      },
+      "value": null,
+      "annotations": []
+    }
+  ],
+  "methods": [
+    {
+      "name": "<init>",
+      "access": [
+        "public"
+      ],
+      "typeparams": [],
+      "params": [
+        {
+          "visible": true,
+          "type": {
+            "base": "double",
+            "annotations": []
+          },
+          "annotations": []
+        },
+        {
+          "visible": true,
+          "type": {
+            "base": "double",
+            "annotations": []
+          },
+          "annotations": []
+        }
+      ],
+      "returns": {
+        "type": null,
+        "annotations": []
+      },
+      "code": {
+        "max_stack": 3,
+        "max_locals": 5,
+        "exceptions": [],
+        "stack_map": null,
+        "lines": [
+          {
+            "offset": 0,
+            "line": 7
+          },
+          {
+            "offset": 2,
+            "line": 8
+          },
+          {
+            "offset": 5,
+            "line": 9
+          },
+          {
+            "offset": 8,
+            "line": 10
+          }
+        ],
+        "annotations": [],
+        "bytecode": [
+          {
+            "offset": 0,
+            "opr": "load",
+            "type": "ref",
+            "index": 0
+          },
+          {
+            "offset": 1,
+            "opr": "invoke",
+            "access": "special",
+            "method": {
+              "is_interface": false,
+              "ref": {
+                "kind": "class",
+                "name": "org/group9/Extend/Shape"
+              },
+              "name": "<init>",
+              "args": [],
+              "returns": null
+            }
+          },
+          {
+            "offset": 4,
+            "opr": "load",
+            "type": "ref",
+            "index": 0
+          },
+          {
+            "offset": 5,
+            "opr": "load",
+            "type": "double",
+            "index": 1
+          },
+          {
+            "offset": 6,
+            "opr": "put",
+            "static": false,
+            "field": {
+              "class": "org/group9/Extend/Rectangle",
+              "name": "x",
+              "type": "double"
+            }
+          },
+          {
+            "offset": 9,
+            "opr": "load",
+            "type": "ref",
+            "index": 0
+          },
+          {
+            "offset": 10,
+            "opr": "load",
+            "type": "double",
+            "index": 3
+          },
+          {
+            "offset": 11,
+            "opr": "put",
+            "static": false,
+            "field": {
+              "class": "org/group9/Extend/Rectangle",
+              "name": "y",
+              "type": "double"
+            }
+          },
+          {
+            "offset": 14,
+            "opr": "return",
+            "type": null
+          }
+        ]
+      },
+      "annotations": [],
+      "exceptions": [],
+      "default": null
+    },
+    {
+      "name": "width",
+      "access": [
+        "public"
+      ],
+      "typeparams": [],
+      "params": [],
+      "returns": {
+        "type": {
+          "base": "double"
+        },
+        "annotations": []
+      },
+      "code": {
+        "max_stack": 2,
+        "max_locals": 1,
+        "exceptions": [],
+        "stack_map": null,
+        "lines": [
+          {
+            "offset": 0,
+            "line": 14
+          }
+        ],
+        "annotations": [],
+        "bytecode": [
+          {
+            "offset": 0,
+            "opr": "load",
+            "type": "ref",
+            "index": 0
+          },
+          {
+            "offset": 1,
+            "opr": "get",
+            "static": false,
+            "field": {
+              "class": "org/group9/Extend/Rectangle",
+              "name": "x",
+              "type": "double"
+            }
+          },
+          {
+            "offset": 4,
+            "opr": "return",
+            "type": "double"
+          }
+        ]
+      },
+      "annotations": [],
+      "exceptions": [],
+      "default": null
+    },
+    {
+      "name": "height",
+      "access": [
+        "public"
+      ],
+      "typeparams": [],
+      "params": [],
+      "returns": {
+        "type": {
+          "base": "double"
+        },
+        "annotations": []
+      },
+      "code": {
+        "max_stack": 2,
+        "max_locals": 1,
+        "exceptions": [],
+        "stack_map": null,
+        "lines": [
+          {
+            "offset": 0,
+            "line": 19
+          }
+        ],
+        "annotations": [],
+        "bytecode": [
+          {
+            "offset": 0,
+            "opr": "load",
+            "type": "ref",
+            "index": 0
+          },
+          {
+            "offset": 1,
+            "opr": "get",
+            "static": false,
+            "field": {
+              "class": "org/group9/Extend/Rectangle",
+              "name": "y",
+              "type": "double"
+            }
+          },
+          {
+            "offset": 4,
+            "opr": "return",
+            "type": "double"
+          }
+        ]
+      },
+      "annotations": [],
+      "exceptions": [],
+      "default": null
+    },
+    {
+      "name": "area",
+      "access": [
+        "public"
+      ],
+      "typeparams": [],
+      "params": [],
+      "returns": {
+        "type": {
+          "base": "double"
+        },
+        "annotations": []
+      },
+      "code": {
+        "max_stack": 4,
+        "max_locals": 1,
+        "exceptions": [],
+        "stack_map": null,
+        "lines": [
+          {
+            "offset": 0,
+            "line": 24
+          }
+        ],
+        "annotations": [],
+        "bytecode": [
+          {
+            "offset": 0,
+            "opr": "load",
+            "type": "ref",
+            "index": 0
+          },
+          {
+            "offset": 1,
+            "opr": "get",
+            "static": false,
+            "field": {
+              "class": "org/group9/Extend/Rectangle",
+              "name": "x",
+              "type": "double"
+            }
+          },
+          {
+            "offset": 4,
+            "opr": "load",
+            "type": "ref",
+            "index": 0
+          },
+          {
+            "offset": 5,
+            "opr": "get",
+            "static": false,
+            "field": {
+              "class": "org/group9/Extend/Rectangle",
+              "name": "y",
+              "type": "double"
+            }
+          },
+          {
+            "offset": 8,
+            "opr": "binary",
+            "type": "double",
+            "operant": "mul"
+          },
+          {
+            "offset": 9,
+            "opr": "return",
+            "type": "double"
+          }
+        ]
+      },
+      "annotations": [],
+      "exceptions": [],
+      "default": null
+    },
+    {
+      "name": "circumference",
+      "access": [
+        "public"
+      ],
+      "typeparams": [],
+      "params": [],
+      "returns": {
+        "type": {
+          "base": "double"
+        },
+        "annotations": []
+      },
+      "code": {
+        "max_stack": 6,
+        "max_locals": 1,
+        "exceptions": [],
+        "stack_map": null,
+        "lines": [
+          {
+            "offset": 0,
+            "line": 29
+          }
+        ],
+        "annotations": [],
+        "bytecode": [
+          {
+            "offset": 0,
+            "opr": "push",
+            "value": {
+              "type": "double",
+              "value": 2
+            }
+          },
+          {
+            "offset": 3,
+            "opr": "load",
+            "type": "ref",
+            "index": 0
+          },
+          {
+            "offset": 4,
+            "opr": "get",
+            "static": false,
+            "field": {
+              "class": "org/group9/Extend/Rectangle",
+              "name": "x",
+              "type": "double"
+            }
+          },
+          {
+            "offset": 7,
+            "opr": "binary",
+            "type": "double",
+            "operant": "mul"
+          },
+          {
+            "offset": 8,
+            "opr": "push",
+            "value": {
+              "type": "double",
+              "value": 2
+            }
+          },
+          {
+            "offset": 11,
+            "opr": "load",
+            "type": "ref",
+            "index": 0
+          },
+          {
+            "offset": 12,
+            "opr": "get",
+            "static": false,
+            "field": {
+              "class": "org/group9/Extend/Rectangle",
+              "name": "y",
+              "type": "double"
+            }
+          },
+          {
+            "offset": 15,
+            "opr": "binary",
+            "type": "double",
+            "operant": "mul"
+          },
+          {
+            "offset": 16,
+            "opr": "binary",
+            "type": "double",
+            "operant": "add"
+          },
+          {
+            "offset": 17,
+            "opr": "return",
+            "type": "double"
+          }
+        ]
+      },
+      "annotations": [],
+      "exceptions": [],
+      "default": null
+    }
+  ],
+  "bootstrapmethods": [],
+  "enclosingmethod": null,
+  "innerclasses": [],
+  "annotations": [],
+  "version": [
+    63,
+    0
+  ]
+}

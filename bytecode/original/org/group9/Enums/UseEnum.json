@@ -1,0 +1,495 @@
+{
+  "name": "org/group9/Enums/UseEnum",
+  "access": [
+    "public",
+    "super"
+  ],
+  "typeparams": [],
+  "super": {
+    "name": "java/lang/Object",
+    "inner": null,
+    "args": [],
+    "annotations": []
+  },
+  "interfaces": [],
+  "fields": [],
+  "methods": [
+    {
+      "name": "<init>",
+      "access": [
+        "public"
+      ],
+      "typeparams": [],
+      "params": [],
+      "returns": {
+        "type": null,
+        "annotations": []
+      },
+      "code": {
+        "max_stack": 1,
+        "max_locals": 1,
+        "exceptions": [],
+        "stack_map": null,
+        "lines": [
+          {
+            "offset": 0,
+            "line": 6
+          }
+        ],
+        "annotations": [],
+        "bytecode": [
+          {
+            "offset": 0,
+            "opr": "load",
+            "type": "ref",
+            "index": 0
+          },
+          {
+            "offset": 1,
+            "opr": "invoke",
+            "access": "special",
+            "method": {
+              "is_interface": false,
+              "ref": {
+                "kind": "class",
+                "name": "java/lang/Object"
+              },
+              "name": "<init>",
+              "args": [],
+              "returns": null
+            }
+          },
+          {
+            "offset": 4,
+            "opr": "return",
+            "type": null
+          }
+        ]
+      },
+      "annotations": [],
+      "exceptions": [],
+      "default": null
+    },
+    {
+      "name": "enumToInt",
+      "access": [
+        "public"
+      ],
+      "typeparams": [],
+      "params": [
+        {
+          "visible": true,
+          "type": {
+            "kind": "class",
+            "name": "org/group9/Enums/TestEnum",
+            "inner": null,
+            "args": [],
+            "annotations": []
+          },
+          "annotations": []
+        }
+      ],
+      "returns": {
+        "type": {
+          "base": "int"
+        },
+        "annotations": []
+      },
+      "code": {
+        "max_stack": 1,
+        "max_locals": 2,
+        "exceptions": [],
+        "stack_map": null,
+        "lines": [
+          {
+            "offset": 0,
+            "line": 9
+          }
+        ],
+        "annotations": [],
+        "bytecode": [
+          {
+            "offset": 0,
+            "opr": "load",
+            "type": "ref",
+            "index": 1
+          },
+          {
+            "offset": 1,
+            "opr": "invoke",
+            "access": "virtual",
+            "method": {
+              "ref": {
+                "kind": "class",
+                "name": "org/group9/Enums/TestEnum"
+              },
+              "name": "ordinal",
+              "args": [],
+              "returns": "int"
+            }
+          },
+          {
+            "offset": 4,
+            "opr": "return",
+            "type": "int"
+          }
+        ]
+      },
+      "annotations": [],
+      "exceptions": [],
+      "default": null
+    },
+    {
+      "name": "intToEnum",
+      "access": [
+        "public"
+      ],
+      "typeparams": [],
+      "params": [
+        {
+          "visible": true,
+          "type": {
+            "base": "int",
+            "annotations": []
+          },
+          "annotations": []
+        }
+      ],
+      "returns": {
+        "type": {
+          "kind": "class",
+          "name": "org/group9/Enums/TestEnum",
+          "inner": null,
+          "args": []
+        },
+        "annotations": []
+      },
+      "code": {
+        "max_stack": 2,
+        "max_locals": 2,
+        "exceptions": [],
+        "stack_map": null,
+        "lines": [
+          {
+            "offset": 0,
+            "line": 13
+          }
+        ],
+        "annotations": [],
+        "bytecode": [
+          {
+            "offset": 0,
+            "opr": "invoke",
+            "access": "static",
+            "method": {
+              "is_interface": false,
+              "ref": {
+                "kind": "class",
+                "name": "org/group9/Enums/TestEnum"
+              },
+              "name": "values",
+              "args": [],
+              "returns": {
+                "kind": "array",
+                "type": {
+                  "kind": "class",
+                  "name": "org/group9/Enums/TestEnum"
+                }
+              }
+            }
+          },
+          {
+            "offset": 3,
+            "opr": "load",
+            "type": "int",
+            "index": 1
+          },
+          {
+            "offset": 4,
+            "opr": "array_load",
+            "type": "ref"
+          },
+          {
+            "offset": 5,
+            "opr": "return",
+            "type": "ref"
+          }
+        ]
+      },
+      "annotations": [],
+      "exceptions": [],
+      "default": null
+    },
+    {
+      "name": "listEnums",
+      "access": [
+        "public"
+      ],
+      "typeparams": [],
+      "params": [],
+      "returns": {
+        "type": {
+          "kind": "class",
+          "name": "java/util/List",
+          "inner": null,
+          "args": [
+            {
+              "kind": "simple",
+              "type": {
+                "kind": "class",
+                "name": "java/lang/String",
+                "inner": null,
+                "args": []
+              },
+              "annotations": []
+            }
+          ]
+        },
+        "annotations": []
+      },
+      "code": {
+        "max_stack": 2,
+        "max_locals": 1,
+        "exceptions": [],
+        "stack_map": null,
+        "lines": [
+          {
+            "offset": 0,
+            "line": 17
+          }
+        ],
+        "annotations": [],
+        "bytecode": [
+          {
+            "offset": 0,
+            "opr": "invoke",
+            "access": "static",
+            "method": {
+              "is_interface": false,
+              "ref": {
+                "kind": "class",
+                "name": "org/group9/Enums/TestEnum"
+              },
+              "name": "values",
+              "args": [],
+              "returns": {
+                "kind": "array",
+                "type": {
+                  "kind": "class",
+                  "name": "org/group9/Enums/TestEnum"
+                }
+              }
+            }
+          },
+          {
+            "offset": 3,
+            "opr": "invoke",
+            "access": "static",
+            "method": {
+              "is_interface": false,
+              "ref": {
+                "kind": "class",
+                "name": "java/util/Arrays"
+              },
+              "name": "stream",
+              "args": [
+                {
+                  "kind": "array",
+                  "type": {
+                    "kind": "class",
+                    "name": "java/lang/Object"
+                  }
+                }
+              ],
+              "returns": {
+                "kind": "class",
+                "name": "java/util/stream/Stream"
+              }
+            }
+          },
+          {
+            "offset": 6,
+            "opr": "invoke",
+            "access": "dynamic",
+            "index": 0,
+            "method": {
+              "name": "apply",
+              "args": [],
+              "returns": {
+                "kind": "class",
+                "name": "java/util/function/Function"
+              }
+            }
+          },
+          {
+            "offset": 11,
+            "opr": "invoke",
+            "access": "interface",
+            "stack_size": 2,
+            "method": {
+              "ref": {
+                "kind": "class",
+                "name": "java/util/stream/Stream"
+              },
+              "name": "map",
+              "args": [
+                {
+                  "kind": "class",
+                  "name": "java/util/function/Function"
+                }
+              ],
+              "returns": {
+                "kind": "class",
+                "name": "java/util/stream/Stream"
+              }
+            }
+          },
+          {
+            "offset": 16,
+            "opr": "invoke",
+            "access": "interface",
+            "stack_size": 1,
+            "method": {
+              "ref": {
+                "kind": "class",
+                "name": "java/util/stream/Stream"
+              },
+              "name": "toList",
+              "args": [],
+              "returns": {
+                "kind": "class",
+                "name": "java/util/List"
+              }
+            }
+          },
+          {
+            "offset": 21,
+            "opr": "return",
+            "type": "ref"
+          }
+        ]
+      },
+      "annotations": [],
+      "exceptions": [],
+      "default": null
+    }
+  ],
+  "bootstrapmethods": [
+    {
+      "index": 0,
+      "method": {
+        "handle": {
+          "handletype": "method",
+          "kind": "static",
+          "method": {
+            "is_interface": false,
+            "ref": {
+              "kind": "class",
+              "name": "java/lang/invoke/LambdaMetafactory"
+            },
+            "name": "metafactory",
+            "args": [
+              {
+                "kind": "class",
+                "name": "java/lang/invoke/MethodHandles$Lookup"
+              },
+              {
+                "kind": "class",
+                "name": "java/lang/String"
+              },
+              {
+                "kind": "class",
+                "name": "java/lang/invoke/MethodType"
+              },
+              {
+                "kind": "class",
+                "name": "java/lang/invoke/MethodType"
+              },
+              {
+                "kind": "class",
+                "name": "java/lang/invoke/MethodHandle"
+              },
+              {
+                "kind": "class",
+                "name": "java/lang/invoke/MethodType"
+              }
+            ],
+            "returns": {
+              "kind": "class",
+              "name": "java/lang/invoke/CallSite"
+            }
+          }
+        },
+        "args": [
+          {
+            "type": "methodtype",
+            "value": {
+              "args": [
+                {
+                  "kind": "class",
+                  "name": "java/lang/Object"
+                }
+              ],
+              "returns": {
+                "kind": "class",
+                "name": "java/lang/Object"
+              }
+            }
+          },
+          {
+            "type": "methodhandle",
+            "value": {
+              "handletype": "method",
+              "kind": "virtual",
+              "method": {
+                "ref": {
+                  "kind": "class",
+                  "name": "java/lang/Enum"
+                },
+                "name": "toString",
+                "args": [],
+                "returns": {
+                  "kind": "class",
+                  "name": "java/lang/String"
+                }
+              }
+            }
+          },
+          {
+            "type": "methodtype",
+            "value": {
+              "args": [
+                {
+                  "kind": "class",
+                  "name": "org/group9/Enums/TestEnum"
+                }
+              ],
+              "returns": {
+                "kind": "class",
+                "name": "java/lang/String"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "enclosingmethod": null,
+  "innerclasses": [
+    {
+      "class": "java/lang/invoke/MethodHandles$Lookup",
+      "outer": "java/lang/invoke/MethodHandles",
+      "name": "Lookup",
+      "access": [
+        "public",
+        "static",
+        "final"
+      ]
+    }
+  ],
+  "annotations": [],
+  "version": [
+    63,
+    0
+  ]
+}

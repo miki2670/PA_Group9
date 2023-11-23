@@ -1,0 +1,171 @@
+{
+  "name": "org/group9/Implement/ITest",
+  "access": [
+    "public",
+    "interface",
+    "abstract"
+  ],
+  "typeparams": [],
+  "super": {
+    "name": "java/lang/Object",
+    "inner": null,
+    "args": [],
+    "annotations": []
+  },
+  "interfaces": [],
+  "fields": [],
+  "methods": [
+    {
+      "name": "DefaultNoOverride",
+      "access": [
+        "public"
+      ],
+      "typeparams": [],
+      "params": [],
+      "returns": {
+        "type": {
+          "kind": "class",
+          "name": "java/lang/String",
+          "inner": null,
+          "args": []
+        },
+        "annotations": []
+      },
+      "code": {
+        "max_stack": 1,
+        "max_locals": 1,
+        "exceptions": [],
+        "stack_map": null,
+        "lines": [
+          {
+            "offset": 0,
+            "line": 5
+          }
+        ],
+        "annotations": [],
+        "bytecode": [
+          {
+            "offset": 0,
+            "opr": "push",
+            "value": {
+              "type": "string",
+              "value": "Default"
+            }
+          },
+          {
+            "offset": 2,
+            "opr": "return",
+            "type": "ref"
+          }
+        ]
+      },
+      "annotations": [],
+      "exceptions": [],
+      "default": null
+    },
+    {
+      "name": "DefaultOverride",
+      "access": [
+        "public"
+      ],
+      "typeparams": [],
+      "params": [],
+      "returns": {
+        "type": {
+          "kind": "class",
+          "name": "java/lang/String",
+          "inner": null,
+          "args": []
+        },
+        "annotations": []
+      },
+      "code": {
+        "max_stack": 1,
+        "max_locals": 1,
+        "exceptions": [],
+        "stack_map": null,
+        "lines": [
+          {
+            "offset": 0,
+            "line": 9
+          }
+        ],
+        "annotations": [],
+        "bytecode": [
+          {
+            "offset": 0,
+            "opr": "push",
+            "value": {
+              "type": "string",
+              "value": "DefaultToerride"
+            }
+          },
+          {
+            "offset": 2,
+            "opr": "return",
+            "type": "ref"
+          }
+        ]
+      },
+      "annotations": [],
+      "exceptions": [],
+      "default": null
+    },
+    {
+      "name": "DefaultOverrideAndExtend",
+      "access": [
+        "public"
+      ],
+      "typeparams": [],
+      "params": [],
+      "returns": {
+        "type": {
+          "kind": "class",
+          "name": "java/lang/String",
+          "inner": null,
+          "args": []
+        },
+        "annotations": []
+      },
+      "code": {
+        "max_stack": 1,
+        "max_locals": 1,
+        "exceptions": [],
+        "stack_map": null,
+        "lines": [
+          {
+            "offset": 0,
+            "line": 13
+          }
+        ],
+        "annotations": [],
+        "bytecode": [
+          {
+            "offset": 0,
+            "opr": "push",
+            "value": {
+              "type": "string",
+              "value": "Override"
+            }
+          },
+          {
+            "offset": 2,
+            "opr": "return",
+            "type": "ref"
+          }
+        ]
+      },
+      "annotations": [],
+      "exceptions": [],
+      "default": null
+    }
+  ],
+  "bootstrapmethods": [],
+  "enclosingmethod": null,
+  "innerclasses": [],
+  "annotations": [],
+  "version": [
+    63,
+    0
+  ]
+}
