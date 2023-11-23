@@ -3,7 +3,7 @@ package org.group9.Implement;
 public class OverrideInterface implements ITest {
     @Override
     public String DefaultOverride() {
-        return "Ovdreddeed";
+        return "Ovreddd";
     }
 
     @Override
